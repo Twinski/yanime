@@ -1,6 +1,6 @@
 # yanime
 
-A clever yet simple-to-use library to use for your React projects.
-Inject animation within a click of your fingers.
+A clever yet simple-to-use animation library for all your React projects.<br/>
+Add a pinch of yanime and see your interfaces come alive!
 
 TODO: Add readme :)
