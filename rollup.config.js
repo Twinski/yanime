@@ -17,6 +17,9 @@ export default {
     file: './dist/bundle.js',
     name: 'Yanime',
   },
+  globals: {
+    react: 'React',
+  },
   plugins: [
     postcss({
       modules: false,
@@ -29,6 +32,6 @@ export default {
     }),
     resolve(),
     commonjs(),
-    // minify(),
+    minify(),
   ],
 }

@@ -4,27 +4,37 @@ import ReactDOM from 'react-dom';
 import Yanime from '../dist/bundle';
 import './index.scss';
 
-const results = [
-  { id: 1, name: 'Atelier Vierkant' },
-  { id: 2, name: 'Vigi' },
-  { id: 3, name: 'Creative Network' },
-  { id: 4, name: 'Tommy Hilfiger' },
-]
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       seed: 0,
+      results: [
+        { id: 1, name: 'Atelier Vierkant' },
+        { id: 2, name: 'Vigi' },
+      ],
     };
   }
+
+  addNewItems(amount) {
+    let results = this.state.results.slice();
+    let newId = results.length + 1;
+    for (let i = 0; i < amount; i++) {
+      results.push({
+        id: newId + i,
+        name: `New item ${newId + i}`,
+      });
+    }
+    this.setState({ results });
+  }
+
   render() {
     return (
       <div>
         <Yanime
           className="results"
-          horizontal
-          items={results}
+          vertical
+          items={this.state.results}
           renderItem={(result, ind) => {
             return (
               <div
@@ -35,13 +45,14 @@ class App extends Component {
               </div>
             );
           }}
-          anim="slide-up"
-          staggerShuffle
+          anim="slide-up-200"
           staggerDelay={1}
           triggerAnim={this.state.seed}
+          animLast={2}
         />
         <button onClick={(e) => {
-          this.setState({ seed: this.state.seed + 1 });
+          // const newResults = [{ id: 5, name: 'Lalala' }, { id: 6, name: 'Haha' }].concat(this.state.results);
+          this.addNewItems(1 + Math.random() * 3);
         }}>
           Seed
         </button>

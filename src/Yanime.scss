@@ -1,7 +1,12 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 // Easings
 $EXPO_EASE_OUT: cubic-bezier(0.005, 0.795, 0.170, 0.995);
+$YANIME_ANIM_SPEED: 300ms;
 
 
 
@@ -12,7 +17,7 @@ $EXPO_EASE_OUT: cubic-bezier(0.005, 0.795, 0.170, 0.995);
 }
 .yanime-fade-in {
   opacity: 0;
-  animation: yanime-keyframes-fade-in 500ms $EXPO_EASE_OUT;
+  animation: yanime-keyframes-fade-in $YANIME_ANIM_SPEED $EXPO_EASE_OUT;
   animation-fill-mode: forwards;
 }
 
@@ -25,7 +30,7 @@ $EXPO_EASE_OUT: cubic-bezier(0.005, 0.795, 0.170, 0.995);
   }
   .yanime-scale-in-#{$scale} {
     opacity: 0;
-    animation: yanime-keyframes-scale-in-#{$scale} 500ms $EXPO_EASE_OUT;
+    animation: yanime-keyframes-scale-in-#{$scale} $YANIME_ANIM_SPEED $EXPO_EASE_OUT;
     animation-fill-mode: forwards;
   }
 }
@@ -39,13 +44,13 @@ $EXPO_EASE_OUT: cubic-bezier(0.005, 0.795, 0.170, 0.995);
   }
   .yanime-slide-up-#{$offsetY} {
     opacity: 0;
-    animation: yanime-keyframes-slide-up-#{$offsetY}px 500ms $EXPO_EASE_OUT;
+    animation: yanime-keyframes-slide-up-#{$offsetY}px $YANIME_ANIM_SPEED $EXPO_EASE_OUT;
     animation-fill-mode: forwards;
   }
 }
 
 // Anim Delays
-@for $i from 0 through 1000 {
+@for $i from 0 through 50 {
   $delay: $i * 25;
   .yanime-delay-#{$delay} {
     animation-delay: #{$delay}ms;
@@ -53,7 +58,6 @@ $EXPO_EASE_OUT: cubic-bezier(0.005, 0.795, 0.170, 0.995);
 }
 
 
-.yanime-wrapper {
+.yanime-container {
   display: flex;
-  background: gold;
 }
