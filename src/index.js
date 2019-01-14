@@ -36,8 +36,8 @@ class App extends Component {
             );
           }}
           anim="slide-up"
-          animStaggerShuffle
-          animStaggerDelay={1}
+          staggerShuffle
+          staggerDelay={1}
           triggerAnim={this.state.seed}
         />
         <button onClick={(e) => {

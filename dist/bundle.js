@@ -1310,16 +1310,16 @@
         if (!seed) seed = this.props.triggerAnim;
         var delays = [];
 
-        if (this.props.animStaggerDelay && this.props.items) {
+        if (this.props.staggerDelay && this.props.items) {
           for (var i = 0; i < (this.props.items || []).length; i++) {
-            var delay = this.props.animStaggerDelay || 0;
+            var delay = this.props.staggerDelay || 0;
             delay *= 100;
             delay = Math.floor(delay / 25) * 25;
             delay *= i;
             delays.push("yanime-delay-".concat(delay));
           }
 
-          if (this.props.animStaggerShuffle) {
+          if (this.props.staggerShuffle) {
             // delays = shuffle
             delays = lodash_shuffle(delays);
           }
@@ -1333,7 +1333,7 @@
           if (_this.props.anim === "slide-up") classNames.push("yanime-slide-up-50");
           if (_this.props.anim === "scale-in") classNames.push("yanime-scale-in-50");
           if (_this.props.anim === "fade-in") classNames.push("yanime-fade-in");
-          if (_this.props.animStaggerDelay) classNames.push(delays[ind]);
+          if (_this.props.staggerDelay) classNames.push(delays[ind]);
           return React.cloneElement(child, {
             key: "".concat(child.key, "-seed").concat(seed),
             className: classNames.join(' ')

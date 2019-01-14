@@ -10,15 +10,15 @@ class Yanime extends React.Component {
     if (!seed) seed = this.props.triggerAnim;
     
     let delays = [];
-    if (this.props.animStaggerDelay && this.props.items) {
+    if (this.props.staggerDelay && this.props.items) {
       for (let i = 0; i < (this.props.items || []).length; i++) {
-        let delay = this.props.animStaggerDelay || 0;
+        let delay = this.props.staggerDelay || 0;
         delay *= 100;
         delay = Math.floor(delay / 25) * 25;
         delay *= i;
         delays.push(`yanime-delay-${delay}`);
       }
-      if (this.props.animStaggerShuffle) {
+      if (this.props.staggerShuffle) {
         // delays = shuffle
         delays = shuffle(delays);
       }
@@ -31,7 +31,7 @@ class Yanime extends React.Component {
       if (this.props.anim === "slide-up") classNames.push(`yanime-slide-up-50`);
       if (this.props.anim === "scale-in") classNames.push(`yanime-scale-in-50`);
       if (this.props.anim === "fade-in") classNames.push(`yanime-fade-in`);
-      if (this.props.animStaggerDelay) classNames.push(delays[ind]);
+      if (this.props.staggerDelay) classNames.push(delays[ind]);
 
       return React.cloneElement(child, {
         key: `${child.key}-seed${seed}`,
