@@ -1,0 +1,39 @@
+{
+  "name": "yanime",
+  "version": "1.0.0",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "serve-html": "babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --open --config server.config.js",
+    "build-plugin": "./node_modules/rollup/bin/rollup ./src/Yanime.js -c rollup.config.js --watch",
+    "dev": "./node_modules/.bin/concurrently \"yarn serve-html\" \"yarn build-plugin\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-babel-minify": "^6.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-postcss": "^1.6.3",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-resolve": "^0.0.1-predev.1",
+    "rollup-plugin-scss": "^0.4.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
