@@ -36,6 +36,7 @@ class App extends Component {
             );
           }}
           anim="slide-up"
+          animStaggerShuffle
           animStaggerDelay={1}
           triggerAnim={this.state.seed}
         />
