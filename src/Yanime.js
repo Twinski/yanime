@@ -28,7 +28,7 @@ class Yanime extends React.Component {
       const child = this.props.renderItem(item, ind);
       const classNames = [];
       if (child.props.className) classNames.push(child.props.className);
-      if (this.props.anim === "slide-up") classNames.push(`yanime-slide-up-50`);
+      if (this.props.anim === "slide-up") classNames.push(`yanime-slide-up-30`);
       if (this.props.anim === "scale-in") classNames.push(`yanime-scale-in-50`);
       if (this.props.anim === "fade-in") classNames.push(`yanime-fade-in`);
       if (this.props.staggerDelay) classNames.push(delays[ind]);

@@ -1,3 +1,10 @@
+
+
+// Easings
+$EXPO_EASE_OUT: cubic-bezier(0.005, 0.795, 0.170, 0.995);
+
+
+
 // Fade-in
 @keyframes yanime-keyframes-fade-in {
   0%   { opacity: 0; }
@@ -5,7 +12,7 @@
 }
 .yanime-fade-in {
   opacity: 0;
-  animation: yanime-keyframes-fade-in 500ms cubic-bezier(0.010, 0.785, 0.300, 0.995);
+  animation: yanime-keyframes-fade-in 500ms $EXPO_EASE_OUT;
   animation-fill-mode: forwards;
 }
 
@@ -18,21 +25,21 @@
   }
   .yanime-scale-in-#{$scale} {
     opacity: 0;
-    animation: yanime-keyframes-scale-in-#{$scale} 500ms cubic-bezier(0.010, 0.785, 0.300, 0.995);
+    animation: yanime-keyframes-scale-in-#{$scale} 500ms $EXPO_EASE_OUT;
     animation-fill-mode: forwards;
   }
 }
 
 // Slide-up
-@for $i from 0 through 10 {
-  $offsetY: $i * 50;
+@for $i from 0 through 25 {
+  $offsetY: $i * 10;
   @keyframes yanime-keyframes-slide-up-#{$offsetY}px {
     0%   { transform: translate(0, #{$offsetY}px); opacity: 0; }
     100% { transform: translate(0, 0); opacity: 1; }
   }
   .yanime-slide-up-#{$offsetY} {
     opacity: 0;
-    animation: yanime-keyframes-slide-up-#{$offsetY}px 500ms cubic-bezier(0.010, 0.785, 0.300, 0.995);
+    animation: yanime-keyframes-slide-up-#{$offsetY}px 500ms $EXPO_EASE_OUT;
     animation-fill-mode: forwards;
   }
 }
